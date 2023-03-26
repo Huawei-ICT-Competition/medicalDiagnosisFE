@@ -1,0 +1,30 @@
+<div class="container">
+    <div>
+        <ngx-file-drop [style.height.px]="700" dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+            (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+            <ng-template class="container test" ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                Optional custom content that replaces the the entire default content.
+                <br>
+                <i class="fa-solid fa-cloud-arrow-up fa-10x" (click)="openFileSelector()"></i>
+            </ng-template>
+        </ngx-file-drop>
+    </div>
+
+    <br>
+    <!-- <div class="upload-table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody class="upload-name-style">
+                <tr *ngFor="let item of files; let i = index">
+                    <td>
+                        <strong>{{ item.relativePath }}</strong>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+</div>
