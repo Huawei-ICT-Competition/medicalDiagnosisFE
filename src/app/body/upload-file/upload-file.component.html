@@ -1,30 +1,25 @@
-<div class="container">
-    <div>
-        <ngx-file-drop [style.height.px]="700" dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
-            (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
-            <ng-template class="container test" ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-                Optional custom content that replaces the the entire default content.
-                <br>
-                <i class="fa-solid fa-cloud-arrow-up fa-10x" (click)="openFileSelector()"></i>
-            </ng-template>
-        </ngx-file-drop>
-    </div>
-
-    <br>
-    <!-- <div class="upload-table">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <tbody class="upload-name-style">
-                <tr *ngFor="let item of files; let i = index">
-                    <td>
-                        <strong>{{ item.relativePath }}</strong>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div> -->
+<div class="card flex justify-content-center">
+    <p-fileUpload name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" (onUpload)="onUpload($event)"
+        [multiple]="true" accept="image/*">
+        <ng-template pTemplate="content">
+            <p-table *ngIf="uploadedFiles.length" [value]="uploadedFiles" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>image</th>
+                        <th>Name</th>
+                        <th>Size</th>
+                        <th>Prediction</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-file>
+                    <tr>
+                        <td><img class="w-25" [src]="file.objectURL" alt="img"></td>
+                        <td>{{ file.name }}</td>
+                        <td>{{ file.size }} bytes</td>
+                        <td>true</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </ng-template>
+    </p-fileUpload>
 </div>

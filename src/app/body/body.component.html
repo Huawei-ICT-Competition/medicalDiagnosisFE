@@ -1,3 +1,58 @@
 <div class="container">
+  <p-tabView>
+    <p-tabPanel header="Overview">
+      <p>
+        We built and trained a Convolutional Neural Network (CNN) for Bone X-ray Image classification using
+        TensorFlow.
+        The
+        CNN
+        has three convolutional layers with max pooling, one dense layer, and a softmax output layer. The model is
+        compiled
+        with
+        a categorical cross-entropy loss function and optimized with the Adam optimizer.
+
+        The training and validation data are generated using the ImageDataGenerator class from the TensorFlow Keras
+        API,
+        which
+        applies image augmentation techniques such as rotation, shifting, shearing, zooming, and flipping to the
+        training
+        data
+        to increase the variability of the input data. The images are rescaled to a range of 0 to 1 before being fed
+        into
+        the
+        model.
+
+        The model is fitted on the training data for 20 epochs. A checkpoint is created to save the model with the
+        lowest
+        validation loss during training. The trained model can then be used to predict the classes of new images.
+      </p>
+    </p-tabPanel>
+    <p-tabPanel header="Results Overview">
+      <p>
+        The results show the performance of a trained model on both training and validation datasets. The training
+        dataset
+        has a
+        loss of 0.5840 and an accuracy of 0.6763, which means that the model predicted the correct class for 67.63% of
+        the
+        images in the training dataset, and the average loss for these predictions is 0.5840.
+
+        On the other hand, the validation dataset has a lower loss of 0.4805 and a higher accuracy of 0.8050. These
+        values
+        indicate that the model has better performance on the validation dataset than the training dataset, which is a
+        good sign
+        that the model is not overfitting to the training dataset. An accuracy of 0.8050 means that the model was able
+        to
+        predict the correct class for 80.50% of the images in the validation dataset, and the average loss for these
+        predictions
+        is 0.4805.
+
+        Overall, these results suggest that the trained model has good performance on the validation dataset, and it
+        is
+        ready to
+        be used for making predictions on new images.
+      </p>
+    </p-tabPanel>
+  </p-tabView>
+  <br>
   <app-upload-file></app-upload-file>
 </div>
