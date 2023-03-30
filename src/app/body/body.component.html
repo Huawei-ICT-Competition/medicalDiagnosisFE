@@ -1,55 +1,62 @@
 <div class="container">
   <p-tabView>
-    <p-tabPanel header="Overview">
+    <p-tabPanel header="Introduction">
       <p>
-        We built and trained a Convolutional Neural Network (CNN) for Bone X-ray Image classification using
-        TensorFlow.
-        The
-        CNN
-        has three convolutional layers with max pooling, one dense layer, and a softmax output layer. The model is
-        compiled
-        with
-        a categorical cross-entropy loss function and optimized with the Adam optimizer.
-
-        The training and validation data are generated using the ImageDataGenerator class from the TensorFlow Keras
-        API,
-        which
-        applies image augmentation techniques such as rotation, shifting, shearing, zooming, and flipping to the
-        training
-        data
-        to increase the variability of the input data. The images are rescaled to a range of 0 to 1 before being fed
-        into
-        the
-        model.
-
-        The model is fitted on the training data for 20 epochs. A checkpoint is created to save the model with the
-        lowest
-        validation loss during training. The trained model can then be used to predict the classes of new images.
+        The accurate classification of Bone X-ray Images is crucial for the diagnosis and treatment of bone diseases. In
+        this project, we present a Convolutional Neural Network (CNN) approach for Bone X-ray Image classification using
+        TensorFlow. Our goal is to develop a model that can accurately classify bone images into their respective
+        categories using deep learning techniques. We use image augmentation techniques to increase the variability of
+        the input data and improve the model's performance.
       </p>
     </p-tabPanel>
-    <p-tabPanel header="Results Overview">
+
+    <p-tabPanel header="Data Preparation">
       <p>
-        The results show the performance of a trained model on both training and validation datasets. The training
-        dataset
-        has a
-        loss of 0.5840 and an accuracy of 0.6763, which means that the model predicted the correct class for 67.63% of
-        the
-        images in the training dataset, and the average loss for these predictions is 0.5840.
+        We used a dataset of Bone X-ray Images consisting of 9,400 images divided into two categories: normal,
+        fracture.<br><br>
 
-        On the other hand, the validation dataset has a lower loss of 0.4805 and a higher accuracy of 0.8050. These
-        values
-        indicate that the model has better performance on the validation dataset than the training dataset, which is a
-        good sign
-        that the model is not overfitting to the training dataset. An accuracy of 0.8050 means that the model was able
-        to
-        predict the correct class for 80.50% of the images in the validation dataset, and the average loss for these
-        predictions
-        is 0.4805.
+        To increase the variability of the input data and prevent overfitting, we used the ImageDataGenerator class from
+        the TensorFlow Keras API to apply image augmentation techniques such as rotation, shifting, shearing, zooming,
+        and flipping to the training data. We rescaled the images to a range of 0 to 1 before being fed into the model.
 
-        Overall, these results suggest that the trained model has good performance on the validation dataset, and it
-        is
-        ready to
-        be used for making predictions on new images.
+      </p>
+    </p-tabPanel>
+
+    <p-tabPanel header="Model Architecture">
+      <p>
+        Our CNN model has three convolutional layers with max pooling, one dense layer, and a softmax output layer. We
+        used ReLU activation function in the convolutional layers and the dense layer. We compiled the model with the
+        categorical cross-entropy loss function and optimized with the Adam optimizer. To prevent overfitting, we added
+        a dropout layer with a rate of 0.5 after the last convolutional layer.
+
+      </p>
+    </p-tabPanel>
+
+    <p-tabPanel header="Training Process">
+      <p>
+        We trained the model on the training data for 20 epochs with a batch size of 128 and a learning rate of 0.001.
+        During training, we evaluated the model's performance on the validation dataset using accuracy and loss metrics.
+        We also created a checkpoint to save the model with the lowest validation loss.
+
+      </p>
+    </p-tabPanel>
+
+    <p-tabPanel header="Results">
+      <p>
+        The model achieved an accuracy of 0.6763 and a loss of 0.5840 on the training dataset, while achieving an
+        accuracy of 0.8050 and a loss of 0.4805 on the validation dataset. These results suggest that the model has
+        better performance on the validation dataset and is not overfitting to the training dataset. We presented the
+        results using confusion matrices to visualize the model's performance on each category.
+
+      </p>
+    </p-tabPanel>
+
+    <p-tabPanel header="Conclusion">
+      <p>
+        Our application demonstrates the effectiveness of using a CNN model with image augmentation techniques for Bone
+        X-ray Image classification. The model achieved high accuracy and low loss on the validation dataset, suggesting
+        its potential for practical applications in clinical settings. Future research could explore more advanced CNN
+        architectures and more extensive data augmentation techniques to further improve the model's performance.
       </p>
     </p-tabPanel>
   </p-tabView>
