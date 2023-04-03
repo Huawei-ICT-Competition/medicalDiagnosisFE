@@ -2,21 +2,19 @@
     <p-fileUpload name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" (onUpload)="onUpload($event)"
         [multiple]="true" accept="image/*">
         <ng-template pTemplate="content">
-            <p-table *ngIf="uploadedFiles.length" [value]="uploadedFiles" [tableStyle]="{ 'min-width': '50rem' }">
+            <p-table *ngIf="uploadedFiles.length" [loading]="loading" [value]="uploadedFiles" [tableStyle]="{ 'min-width': '50rem' }">
                 <ng-template pTemplate="header">
                     <tr>
-                        <th>image</th>
+                        <th>Image</th>
                         <th>Name</th>
-                        <th>Size</th>
                         <th>Prediction</th>
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="body" let-file>
+                <ng-template pTemplate="body" let-file let-index>
                     <tr>
-                        <td><img class="w-25" [src]="file.objectURL" alt="img"></td>
-                        <td>{{ file.name }}</td>
-                        <td>{{ file.size }} bytes</td>
-                        <td>true</td>
+                        <td><img class="w-25" [src]="file.file.objectURL" alt="img"></td>
+                        <td>{{ file.file.name }}</td>
+                        <td>{{ file.predictionResult }}</td>
                     </tr>
                 </ng-template>
             </p-table>

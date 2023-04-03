@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-upload-file',
@@ -8,32 +9,38 @@ import { Component } from '@angular/core';
 })
 export class UploadFileComponent {
   uploadedFiles: any[] = [];
-  results: any[] = [];
+  loading: boolean = true;
 
   constructor(private http: HttpClient) {}
 
-  onUpload(event: { files: any }) {
+  async onUpload(event: { files: any }) {
+    this.loading = true;
     for (let file of event.files) {
-      this.uploadedFiles.push(file);
+      this.uploadedFiles.push({
+        file: file,
+        predictionResult: null,
+      });
     }
 
-    for (const file of this.uploadedFiles) {
+    for (let file of this.uploadedFiles) {
       const formData = new FormData();
-      formData.append('file', file);
+      formData.append('file', file.file);
 
       const headers = new HttpHeaders({
         // 'Content-Type': 'multipart/form-data',
       });
 
-      this.http
-        .post('http://127.0.0.1:8000/model007/prediction', formData, {
+      await this.http
+        .post(`${environment.API}/api/v1/classify_img`, formData, {
           headers,
         })
         .subscribe({
           next: (result) => {
-            console.log(result);
+            file.predictionResult = (result as any).prediction;
+            this.loading = false;
           },
         });
     }
+    
   }
 }
