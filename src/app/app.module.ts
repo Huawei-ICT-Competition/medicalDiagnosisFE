@@ -11,6 +11,13 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { TabViewModule } from 'primeng/tabview';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TableModule } from 'primeng/table';
+import { CardModule } from 'primeng/card';
+import { AnimateModule } from 'primeng/animate';
+import { DividerModule } from 'primeng/divider';
+import { MessagesModule } from 'primeng/messages';
+import { TagModule } from 'primeng/tag';
+import { ImageModule } from 'primeng/image';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,12 +28,19 @@ import { TableModule } from 'primeng/table';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     FileUploadModule,
     TabViewModule,
     ToolbarModule,
     TableModule,
+    CardModule,
+    AnimateModule,
+    DividerModule,
+    MessagesModule,
+    TagModule,
+    ImageModule
   ],
   providers: [],
   bootstrap: [AppComponent],

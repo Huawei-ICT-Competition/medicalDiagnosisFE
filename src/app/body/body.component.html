@@ -1,65 +1,49 @@
 <div class="container">
-  <p-tabView>
-    <p-tabPanel header="Introduction">
-      <p>
+  <section>
+    <h1 class="navbar bg-body-tertiary">Prediction</h1>
+    <app-upload-file></app-upload-file>
+  </section>
+  <p-divider></p-divider>
+
+  <section>
+    <h1 class="navbar bg-body-tertiary">Overview</h1>
+    <div class="row">
+      <div class="col-sm-6 col-md-8">
         The accurate classification of Bone X-ray Images is crucial for the diagnosis and treatment of bone diseases. In
         this project, we present a Convolutional Neural Network (CNN) approach for Bone X-ray Image classification using
         TensorFlow. Our goal is to develop a model that can accurately classify bone images into their respective
         categories using deep learning techniques. We use image augmentation techniques to increase the variability of
         the input data and improve the model's performance.
-      </p>
-    </p-tabPanel>
+      </div>
+      <div class="col-6 col-md-4">
+        <img src="assets/trainingFractured10.jpg" width="250" alt="image">
+      </div>
+    </div>
+  </section>
+  <p-divider></p-divider>
 
-    <p-tabPanel header="Data Preparation">
-      <p>
-        We used a dataset of Bone X-ray Images consisting of 9,400 images divided into two categories: normal,
-        fracture.<br><br>
-
-        To increase the variability of the input data and prevent overfitting, we used the ImageDataGenerator class from
-        the TensorFlow Keras API to apply image augmentation techniques such as rotation, shifting, shearing, zooming,
-        and flipping to the training data. We rescaled the images to a range of 0 to 1 before being fed into the model.
-
-      </p>
-    </p-tabPanel>
-
-    <p-tabPanel header="Model Architecture">
-      <p>
+  <section>
+    <h1 class="navbar bg-body-tertiary">Model Architecture</h1>
+    <div class="row">
+      <div class="col-sm-6 col-md-8">
         Our CNN model has three convolutional layers with max pooling, one dense layer, and a softmax output layer. We
         used ReLU activation function in the convolutional layers and the dense layer. We compiled the model with the
         categorical cross-entropy loss function and optimized with the Adam optimizer. To prevent overfitting, we added
         a dropout layer with a rate of 0.5 after the last convolutional layer.
+      </div>
+      <div class="col-6 col-md-4">
+        <img src="assets/model_arch.jpg" width="250" alt="image">
+      </div>
+    </div>
+  </section>
+  <p-divider></p-divider>
 
-      </p>
-    </p-tabPanel>
-
-    <p-tabPanel header="Training Process">
-      <p>
-        We trained the model on the training data for 20 epochs with a batch size of 128 and a learning rate of 0.001.
-        During training, we evaluated the model's performance on the validation dataset using accuracy and loss metrics.
-        We also created a checkpoint to save the model with the lowest validation loss.
-
-      </p>
-    </p-tabPanel>
-
-    <p-tabPanel header="Results">
-      <p>
-        The model achieved an accuracy of 0.6763 and a loss of 0.5840 on the training dataset, while achieving an
-        accuracy of 0.8050 and a loss of 0.4805 on the validation dataset. These results suggest that the model has
-        better performance on the validation dataset and is not overfitting to the training dataset. We presented the
-        results using confusion matrices to visualize the model's performance on each category.
-
-      </p>
-    </p-tabPanel>
-
-    <p-tabPanel header="Conclusion">
-      <p>
-        Our application demonstrates the effectiveness of using a CNN model with image augmentation techniques for Bone
-        X-ray Image classification. The model achieved high accuracy and low loss on the validation dataset, suggesting
-        its potential for practical applications in clinical settings. Future research could explore more advanced CNN
-        architectures and more extensive data augmentation techniques to further improve the model's performance.
-      </p>
-    </p-tabPanel>
-  </p-tabView>
-  <br>
-  <app-upload-file></app-upload-file>
+  <section>
+    <h1 class="navbar bg-body-tertiary">Results</h1>
+    <p>The model achieved an accuracy of 0.6763 and a loss of 0.5840 on the training dataset, while achieving an
+      accuracy of 0.8050 and a loss of 0.4805 on the validation dataset. These results suggest that the model has
+      better performance on the validation dataset and is not overfitting to the training dataset. We presented the
+      results using confusion matrices to visualize the model's performance on each category.</p>
+  </section>
+  <br><br>
 </div>

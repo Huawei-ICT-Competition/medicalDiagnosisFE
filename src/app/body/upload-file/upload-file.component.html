@@ -1,20 +1,22 @@
+<p-messages></p-messages>
 <div class="card flex justify-content-center">
     <p-fileUpload name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" (onUpload)="onUpload($event)"
         [multiple]="true" accept="image/*">
         <ng-template pTemplate="content">
+            <p [hidden]="uploadedFiles.length">Select or drag and drop X-ray images for classification</p>
             <p-table *ngIf="uploadedFiles.length" [loading]="loading" [value]="uploadedFiles" [tableStyle]="{ 'min-width': '50rem' }">
                 <ng-template pTemplate="header">
                     <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Prediction</th>
+                        <th [width]="50">Image</th>
+                        <th [width]="25">Name</th>
+                        <th [width]="25">Prediction</th>
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-file let-index>
                     <tr>
                         <td><img class="w-25" [src]="file.file.objectURL" alt="img"></td>
                         <td>{{ file.file.name }}</td>
-                        <td>{{ file.predictionResult }}</td>
+                        <td><p-tag [value]="file.predictionResult" [severity]="getSeverity(file.predictionResult)"></p-tag></td>
                     </tr>
                 </ng-template>
             </p-table>
