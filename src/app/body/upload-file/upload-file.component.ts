@@ -28,6 +28,7 @@ export class UploadFileComponent {
 
   async onUpload(event: { files: any }) {
     this.loading = true;
+    this.uploadedFiles = [];
     for (let file of event.files) {
       this.uploadedFiles.push({
         file: file,
