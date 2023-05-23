@@ -3,14 +3,142 @@
     <h1 class="navbar bg-body-tertiary">Prediction</h1>
     <app-upload-file></app-upload-file>
   </section>
-  <p-divider></p-divider>
+  <br><br>
+  <!-- <p-divider></p-divider> -->
 
+  <!--<section>
+     <div class="row row-cols-3 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="assets/trainingFractured10.jpg" class="card-img-top" alt="Hollywood Sign on The Hill" />
+          <div class="card-body">
+            <h5 class="card-title">Overview</h5>
+            <p class="card-text">
+              The accurate classification of Bone X-ray Images is crucial for the diagnosis and treatment of bone
+              diseases.
+              In
+              this project, we present a Convolutions Neural Network (CNN) approach for Bone X-ray Image classification
+              using
+              TensorFlow. Our goal is to develop a model that can accurately classify bone images into their respective
+              categories using deep learning techniques. We use image augmentation techniques to increase the
+              variability of
+              the input data and improve the model's performance.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="assets/model_arch.jpg" class="card-img-top" alt="Hollywood Sign on The Hill" />
+          <div class="card-body">
+            <h5 class="card-title">Model Architecture</h5>
+            <p class="card-text">
+              Our CNN model has three convolutional layers with max pooling, one dense layer, and a softmax output
+              layer. We
+              used ReLU activation function in the convolutional layers and the dense layer. We compiled the model with
+              the
+              categorical cross-entropy loss function and optimized with the Adam optimizer. To prevent overfitting, we
+              added
+              a dropout layer with a rate of 0.5 after the last convolutional layer.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="assets/model_arch.jpg" class="card-img-top" alt="Hollywood Sign on The Hill" />
+          <div class="card-body">
+            <h5 class="card-title">Results</h5>
+            <p class="card-text">
+              The model achieved an accuracy of 0.6763 and a loss of 0.5840 on the training dataset, while achieving an
+              accuracy of 0.8050 and a loss of 0.4805 on the validation dataset. These results suggest that the model
+              has
+              better performance on the validation dataset and is not overfitting to the training dataset. We presented
+              the
+              results using confusion matrices to visualize the model's performance on each category.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </section>-->
+
+  <div class="card mb-3" style="padding: 20px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="assets/trainFractured103.jpg" alt="" class="img-fluid rounded-start" />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title fs-1">Overview</h5>
+          <p class="card-text fs-3" style="margin-top: 50px;">
+            The accurate classification of Bone X-ray Images is crucial for the diagnosis and treatment of bone
+            diseases. In
+            this project, we present a Convolutions Neural Network (CNN) approach for Bone X-ray Image classification
+            using
+            TensorFlow. Our goal is to develop a model that can accurately classify bone images into their respective
+            categories using deep learning techniques. We use image augmentation techniques to increase the variability
+            of
+            the input data and improve the model's performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="card mb-3" style="padding: 20px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="assets/model_arch.jpg" alt="" class="img-fluid rounded-start" />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title fs-1">Model Architecture</h5>
+          <p class="card-text fs-3" style="margin-top: 50px;">
+            Our CNN model has three convolutional layers with max pooling, one dense layer, and a softmax output layer.
+            We
+            used ReLU activation function in the convolutional layers and the dense layer. We compiled the model with
+            the
+            categorical cross-entropy loss function and optimized with the Adam optimizer. To prevent overfitting, we
+            added
+            a dropout layer with a rate of 0.5 after the last convolutional layer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="card mb-3" style="padding: 20px;">
+    <div class="row g-0">
+      <div class="col-md-12">
+        <div class="card-body">
+          <h5 class="card-title fs-1">Results</h5>
+          <p class="card-text fs-3" style="margin-top: 50px;">
+            The model achieved an accuracy of 0.6763 and a loss of 0.5840 on the training dataset, while
+            achieving an
+            accuracy of 0.8050 and a loss of 0.4805 on the validation dataset. These results suggest that the model has
+            better performance on the validation dataset and is not overfitting to the training dataset. We presented
+            the
+            results using confusion matrices to visualize the model's performance on each category.
+          </p>
+          <br>
+          <p class="card-text fs-4">
+            <strong>*The model that achieved the mentioned results was trained and exported using ModelArts on the
+              Huawei
+              cloud.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
   <section>
     <h1 class="navbar bg-body-tertiary">Overview</h1>
     <div class="row">
-      <div class="col-sm-6 col-md-8">
+      <div class="col-sm-6 col-md-8 fs-3">
         The accurate classification of Bone X-ray Images is crucial for the diagnosis and treatment of bone diseases. In
-        this project, we present a Convolutional Neural Network (CNN) approach for Bone X-ray Image classification using
+        this project, we present a Convolutions Neural Network (CNN) approach for Bone X-ray Image classification using
         TensorFlow. Our goal is to develop a model that can accurately classify bone images into their respective
         categories using deep learning techniques. We use image augmentation techniques to increase the variability of
         the input data and improve the model's performance.
@@ -25,7 +153,7 @@
   <section>
     <h1 class="navbar bg-body-tertiary">Model Architecture</h1>
     <div class="row">
-      <div class="col-sm-6 col-md-8">
+      <div class="col-sm-6 col-md-8 fs-3">
         Our CNN model has three convolutional layers with max pooling, one dense layer, and a softmax output layer. We
         used ReLU activation function in the convolutional layers and the dense layer. We compiled the model with the
         categorical cross-entropy loss function and optimized with the Adam optimizer. To prevent overfitting, we added
@@ -40,10 +168,11 @@
 
   <section>
     <h1 class="navbar bg-body-tertiary">Results</h1>
-    <p>The model achieved an accuracy of 0.6763 and a loss of 0.5840 on the training dataset, while achieving an
+    <p class="fs-3">The model achieved an accuracy of 0.6763 and a loss of 0.5840 on the training dataset, while
+      achieving an
       accuracy of 0.8050 and a loss of 0.4805 on the validation dataset. These results suggest that the model has
       better performance on the validation dataset and is not overfitting to the training dataset. We presented the
       results using confusion matrices to visualize the model's performance on each category.</p>
   </section>
   <br><br>
-</div>
+</div> -->
