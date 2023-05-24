@@ -18,6 +18,7 @@ import { MessagesModule } from 'primeng/messages';
 import { TagModule } from 'primeng/tag';
 import { ImageModule } from 'primeng/image';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DividerModule,
     MessagesModule,
     TagModule,
-    ImageModule
+    ImageModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

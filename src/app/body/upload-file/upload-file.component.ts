@@ -27,6 +27,11 @@ export class UploadFileComponent {
   }
 
   async onUpload(event: { files: any }) {
+    // this.messageService.add({
+    //   severity: 'success',
+    //   summary: 'type',
+    //   detail: 'name',
+    // });
     this.loading = true;
     this.uploadedFiles = [];
     for (let file of event.files) {
